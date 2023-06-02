@@ -1,5 +1,14 @@
 {
     "version": 2,
+    "env": {
+        "PORT": 3000,
+        "PORT_DB": 5432,
+        "USER_NAME_DB": "postgres",
+        "HOST": "localhost",
+        "NAME_DB": "portfile",
+        "TYPE_DB": "postgres",
+        "PASSWORD_DB": "1234"
+    },
     "builds": [{
         "src": "src/main.ts",
         "use": "@vercel/node"
