@@ -30,8 +30,17 @@ export class ProjectsService {
     } catch (error) {}
   }
 
-  findAll() {
-    return `This action returns all projects`;
+  async findAll() {
+    const projects = await this.projectRepository.find({
+      relations: {
+        images: true,
+      },
+    });
+
+    return projects.map((projects) => ({
+      ...projects,
+      images: projects.images.map((img) => img.url),
+    }));
   }
 
   findOne(id: number) {
