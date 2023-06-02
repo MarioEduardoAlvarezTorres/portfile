@@ -25,5 +25,5 @@ export class Project {
     cascade: true,
     eager: true,
   })
-  images: ProjectImage[];
+  images?: ProjectImage[];
 }

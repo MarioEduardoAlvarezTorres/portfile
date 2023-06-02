@@ -1,4 +1,10 @@
-import { IsArray, IsIn, IsString, MinLength } from 'class-validator';
+import {
+  IsArray,
+  IsIn,
+  IsOptional,
+  IsString,
+  MinLength,
+} from 'class-validator';
 
 export class CreateProjectDto {
   @IsString()
@@ -25,5 +31,6 @@ export class CreateProjectDto {
 
   @IsString({ each: true })
   @IsArray()
+  @IsOptional()
   images: string[];
 }
