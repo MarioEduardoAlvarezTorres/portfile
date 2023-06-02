@@ -33,6 +33,22 @@ export class CreateProjectDto {
     ],
     { each: true },
   )
+  @IsOptional()
+  @IsIn(
+    [
+      'express',
+      'nestjs',
+      'nodejs',
+      'sequelize',
+      'mysql',
+      'mssql',
+      'postgres',
+      'docker',
+      'javascript',
+      'typescript',
+    ],
+    { each: true },
+  )
   @IsArray()
   developerToolsBackend: string[];
 
