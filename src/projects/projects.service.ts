@@ -94,8 +94,9 @@ export class ProjectsService {
     };
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} project`;
+  async remove(id: string) {
+    const project = await this.findOne(id);
+    await this.projectRepository.remove(project);
   }
 
   handleDBExceptions(error: any) {
