@@ -46,6 +46,7 @@ export class CreateProjectDto {
       'docker',
       'javascript',
       'typescript',
+      'html',
     ],
     { each: true },
   )
