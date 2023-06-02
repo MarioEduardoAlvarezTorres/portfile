@@ -16,18 +16,40 @@ export class CreateProjectDto {
   description: string;
 
   @IsString({ each: true })
-  @IsIn(['express', 'nestjs'], { each: true })
+  @IsOptional()
+  @IsIn(
+    [
+      'express',
+      'nestjs',
+      'nodejs',
+      'sequelize',
+      'mysql',
+      'mssql',
+      'postgres',
+      'docker',
+      'javascript',
+      'typescript',
+    ],
+    { each: true },
+  )
   @IsArray()
   developerToolsBackend: string[];
 
   @IsString({ each: true })
-  @IsIn(['css', 'sass'], { each: true })
+  @IsOptional()
+  @IsIn(['css', 'sass', 'javascript', 'boostrap', 'react', 'angular'], {
+    each: true,
+  })
   @IsArray()
   developerToolsFrontend: string[];
 
+  @IsString({ each: true })
+  @IsOptional()
+  @IsArray()
+  links: string;
+
   @IsString()
-  @MinLength(5)
-  link: string;
+  tag: string;
 
   @IsString({ each: true })
   @IsArray()

@@ -12,14 +12,17 @@ export class Project {
   @Column()
   description: string;
 
-  @Column('simple-array')
+  @Column('simple-array', { nullable: true })
   developerToolsBackend: string[];
 
-  @Column('simple-array')
+  @Column('simple-array', { nullable: true })
   developerToolsFrontend: string[];
 
+  @Column('simple-array', { nullable: true })
+  links: string;
+
   @Column()
-  link: string;
+  tag: string;
 
   @OneToMany(() => ProjectImage, (projectImage) => projectImage.project, {
     cascade: true,
