@@ -67,6 +67,15 @@ export class CreateProjectDto {
   links: string;
 
   @IsString()
+  @IsIn([
+    'HTML-CSS',
+    'HTML-CSS-JS',
+    'JAVASCRIPT',
+    'REACT',
+    'ANGULAR',
+    'EXPRESS',
+    'NESTJS',
+  ])
   tag: string;
 
   @IsString({ each: true })
