@@ -29,24 +29,9 @@ export class CreateProjectDto {
       'docker',
       'javascript',
       'typescript',
+      'typeorm',
       'html',
-    ],
-    { each: true },
-  )
-  @IsOptional()
-  @IsIn(
-    [
-      'express',
-      'nestjs',
-      'nodejs',
-      'sequelize',
-      'mysql',
-      'mssql',
-      'postgres',
-      'docker',
-      'javascript',
-      'typescript',
-      'html',
+      'hbs',
     ],
     { each: true },
   )
@@ -55,9 +40,21 @@ export class CreateProjectDto {
 
   @IsString({ each: true })
   @IsOptional()
-  @IsIn(['css', 'sass', 'javascript', 'boostrap', 'react', 'angular', 'html'], {
-    each: true,
-  })
+  @IsIn(
+    [
+      'css',
+      'sass',
+      'javascript',
+      'boostrap',
+      'react',
+      'angular',
+      'html',
+      'figma',
+    ],
+    {
+      each: true,
+    },
+  )
   @IsArray()
   developerToolsFrontend: string[];
 
