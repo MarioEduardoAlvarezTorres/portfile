@@ -32,6 +32,7 @@ export class CreateProjectDto {
       'typeorm',
       'html',
       'hbs',
+      'jwt',
     ],
     { each: true },
   )
@@ -45,7 +46,7 @@ export class CreateProjectDto {
       'css',
       'sass',
       'javascript',
-      'boostrap',
+      'bootstrap',
       'react',
       'angular',
       'html',
